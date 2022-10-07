@@ -1,1 +1,63 @@
 i will past the que and also my ans
+
+
+// Java code to sort 2D matrix row-wise
+import java.util.*;
+
+class rough {
+	public static void main(String args[]){
+		Scanner sc = new Scanner(System.in);
+
+		car c1 = new car();
+		c1.read();
+		c1.compute();
+		c1.display();
+	}
+	
+}
+
+class car{
+
+	Scanner sc = new Scanner(System.in);
+
+	String type;
+	int price;
+	int extrafitting;
+	int gst;
+	int discount;
+	int netp;
+
+	void read(){
+		type = sc.nextLine();
+		price = sc.nextInt();
+		extrafitting = sc.nextInt();		
+	}
+
+	void compute(){
+		int total = price + extrafitting;
+
+		if(type == "Hatchback" ){
+			discount = (total*3)/100 ;
+		}
+		else if(type == "Sedan"){
+			discount = (total*5)/100 ;
+		}
+		else if(type == "SUV"){
+			discount = (total*10)/100;
+		}
+		else if(type == "MUV"){
+			discount = (total*15)/100;
+		}
+		else if(type != "MUV" && type != "SUV" && type != "Sedan" && type != "Hatchback" ){
+			System.out.println("Invalid Type");
+		}
+
+		gst =  ((total - discount)*12)/100;
+		netp = total - discount + gst;
+	}
+
+	void display(){
+		System.out.println(netp);
+	}
+}
+   
